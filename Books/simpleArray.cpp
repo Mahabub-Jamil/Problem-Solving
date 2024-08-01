@@ -1,20 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    int n, id, contestent[n], maxScore = 0;
+    int n, id, maxScore = 0;
 
     cin >> n;
-
-    for (int i = 1; i <= n; i++)
-    {
-        contestent[i] = 0;
-    }
+    vector<int> contestent(n + 1, 0); // Initialize the vector with size n+1 and all elements set to 0
 
     for (int i = 1; i <= 10; i++)
     {
         cin >> id;
-        contestent[i] = contestent[i] + 1;
+        contestent[id]++;
     }
 
     for (int i = 1; i <= n; i++)
@@ -30,7 +27,9 @@ int main()
     {
         if (maxScore == contestent[i])
         {
-            cout << i + 1;
+            cout << i << " "; // Corrected the output to print the contestant ID
         }
     }
+
+    return 0;
 }
